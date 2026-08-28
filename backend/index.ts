@@ -15,9 +15,13 @@ const mongoUri = process.env.MONGO_URI || process.env.Mongo_URI;
 const databaseName = process.env.MONGO_DB_NAME || 'sanjseSeo';
 const sessionSecret = process.env.SESSION_SECRET || randomBytes(32).toString('hex');
 const configuredFrontendUrl = process.env.FRONTEND_URL || process.env.APP_URL;
-const deployedFrontendUrl = 'https://sanjse-seo-services-frontend.vercel.app';
+const deployedFrontendOrigins = [
+  'https://sanjse-seo-services-frontend.vercel.app',
+  'https://www.sanjoseagencyseo.com',
+  'https://sanjoseagencyseo.com',
+];
 const allowedFrontendOrigins = new Set(
-  [deployedFrontendUrl, configuredFrontendUrl]
+  [...deployedFrontendOrigins, configuredFrontendUrl]
     .filter((origin): origin is string => Boolean(origin))
     .map((origin) => origin.replace(/\/$/, '')),
 );
@@ -322,7 +326,7 @@ app.post('/api/contact-requests', async (request, response) => {
     <div style="margin:0;background:#f4f7fb;padding:32px 16px;font-family:Arial,sans-serif;color:#102a43">
       <div style="max-width:620px;margin:0 auto;background:#ffffff;border:1px solid #d9e2ec;border-radius:12px;overflow:hidden">
         <div style="background:#0a2540;padding:24px 28px;color:#ffffff">
-          <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#e5c882;font-weight:700">Sanjse SEO Services</div>
+          <div style="font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#e5c882;font-weight:700">Sanjose SEO Services</div>
           <h1 style="margin:8px 0 0;font-size:24px;line-height:1.3">New Contact Form Message</h1>
         </div>
         <div style="padding:28px">
@@ -337,7 +341,7 @@ app.post('/api/contact-requests', async (request, response) => {
           </div>
           <a href="mailto:${escapeHtml(safeEmail)}" style="display:inline-block;margin-top:24px;background:#1e40af;color:#ffffff;text-decoration:none;padding:12px 18px;border-radius:6px;font-weight:700;font-size:14px">Reply to ${escapeHtml(safeName)}</a>
         </div>
-        <div style="padding:16px 28px;background:#f8fafc;color:#829ab1;font-size:12px">Submitted through the Sanjse SEO website contact form.</div>
+        <div style="padding:16px 28px;background:#f8fafc;color:#829ab1;font-size:12px">Submitted through the Sanjose SEO website contact form.</div>
       </div>
     </div>`;
 
@@ -403,7 +407,7 @@ const start = async () => {
   await ensureDatabase();
   console.log(`MongoDB connected to ${databaseName}`);
   const server = app.listen(port, () => {
-    console.log(`Sanjse backend listening on http://localhost:${port}`);
+    console.log(`Sanjose backend listening on http://localhost:${port}`);
     if (missingEnvironment.length > 0) {
       console.warn(`Email is disabled until these variables are set: ${missingEnvironment.join(', ')}`);
     }

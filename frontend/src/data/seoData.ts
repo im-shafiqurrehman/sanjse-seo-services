@@ -134,7 +134,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     location: 'Downtown San Jose, CA',
     avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: 'Sanjse SEO Services transformed our firm’s local presence. Within four months of their Google Maps and on-page optimization sprint, our consultation calls from San Jose organic search tripled. Their transparent weekly reporting gave us complete clarity on what work was being done.',
+    quote: 'Sanjose SEO Services transformed our firm’s local presence. Within four months of their Google Maps and on-page optimization sprint, our consultation calls from San Jose organic search tripled. Their transparent weekly reporting gave us complete clarity on what work was being done.',
     resultMetric: '+210%',
     resultLabel: 'Inbound Legal Consultation Calls'
   },
@@ -147,7 +147,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     location: 'North San Jose, CA',
     avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: 'We were invisible for high-value B2B keywords in the Silicon Valley corridor. Sanjse restructured our technical architecture, eliminated crawl errors, and produced authoritative topic clusters that moved us to page one for our core enterprise logistics solutions.',
+    quote: 'We were invisible for high-value B2B keywords in the Silicon Valley corridor. Sanjose restructured our technical architecture, eliminated crawl errors, and produced authoritative topic clusters that moved us to page one for our core enterprise logistics solutions.',
     resultMetric: 'Page 1',
     resultLabel: 'For 18 High-Value B2B Keywords'
   },
@@ -160,7 +160,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     location: 'Willow Glen, San Jose, CA',
     avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: 'As a local practice, appearing in the Google Maps 3-pack is everything. Sanjse optimized our Google Business Profile, cleaned up our citations across dozens of directories, and got us ranked #1 for pediatric and cosmetic dental queries across Willow Glen and Campbell.',
+    quote: 'As a local practice, appearing in the Google Maps 3-pack is everything. Sanjose optimized our Google Business Profile, cleaned up our citations across dozens of directories, and got us ranked #1 for pediatric and cosmetic dental queries across Willow Glen and Campbell.',
     resultMetric: '#1 Rank',
     resultLabel: 'In Local Google Maps 3-Pack'
   },
@@ -173,7 +173,7 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
     location: 'Santa Clara & San Jose, CA',
     avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    quote: 'Unlike agencies that promise overnight miracles with shady shortcuts, Sanjse built an honest, sustainable strategy. Our organic leads now cost 65% less than our paid Google Ads clicks, delivering consistent business month after month.',
+    quote: 'Unlike agencies that promise overnight miracles with shady shortcuts, Sanjose built an honest, sustainable strategy. Our organic leads now cost 65% less than our paid Google Ads clicks, delivering consistent business month after month.',
     resultMetric: '-65%',
     resultLabel: 'Lower Cost Per Acquisition vs Ads'
   }
@@ -264,7 +264,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-4',
     category: 'Pricing & ROI',
     question: 'How much do SEO services cost in San Jose?',
-    answer: 'Professional SEO services in San Jose generally range from $1,250/month for focused local SEO to $2,450 – $5,000+/month for comprehensive regional or enterprise campaigns. Pricing depends on your website’s current health, industry competitiveness, and the speed at which you want to scale. At Sanjse SEO Services, we provide transparent, custom quotes with zero hidden fees.'
+    answer: 'Professional SEO services in San Jose generally range from $1,250/month for focused local SEO to $2,450 – $5,000+/month for comprehensive regional or enterprise campaigns. Pricing depends on your website’s current health, industry competitiveness, and the speed at which you want to scale. At Sanjose SEO Services, we provide transparent, custom quotes with zero hidden fees.'
   },
   {
     id: 'faq-5',
@@ -275,7 +275,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-6',
     category: 'Technical & Web',
-    question: 'What is included in a Sanjse SEO Audit?',
+    question: 'What is included in a Sanjose SEO Audit?',
     answer: 'Our comprehensive SEO audit evaluates over 50 crucial factors across your website: site crawlability, indexation status, mobile responsiveness, Core Web Vitals speed scores, title and meta tag health, schema markup, duplicate content, broken backlinks, Google Search Console errors, and keyword gap analysis against your top 3 local competitors.'
   },
   {

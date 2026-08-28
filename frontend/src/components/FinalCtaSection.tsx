@@ -97,7 +97,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenAudit })
           </button>
 
           <a
-            href="https://wa.me/923376248458?text=Hello%20Sanjse%20SEO%20Services%2C%20I%20would%20like%20to%20discuss%20an%20SEO%20project."
+            href="https://wa.me/923376248458?text=Hello%20Sanjose%20SEO%20Services%2C%20I%20would%20like%20to%20discuss%20an%20SEO%20project."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-[#0E2F54] hover:bg-[#FAF6EB] dark:hover:bg-[#1E40AF] text-[#0A2540] dark:text-white border border-[#E5C882] dark:border-[#D4AF37]/40 text-sm sm:text-base font-bold rounded-xl shadow-xs transition-all flex items-center justify-center gap-2"

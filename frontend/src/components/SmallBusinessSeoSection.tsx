@@ -57,7 +57,7 @@ export const SmallBusinessSeoSection: React.FC<SmallBusinessSeoSectionProps> = (
               Fast Agile Execution
             </h3>
             <p className="text-sm text-[#334E68] dark:text-slate-300 mt-2.5 leading-relaxed">
-              Large corporate agencies move slowly with bloated account management layers. At Sanjse, you work directly with experienced SEO specialists who fix issues and push updates rapidly.
+              Large corporate agencies move slowly with bloated account management layers. At Sanjose, you work directly with experienced SEO specialists who fix issues and push updates rapidly.
             </p>
             <ul className="mt-5 space-y-2 text-xs text-[#0A2540] dark:text-slate-200 pt-4 border-t border-[#E2E8F0] dark:border-[#1E3A8A] font-medium">
               <li className="flex items-center gap-2">

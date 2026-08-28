@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAudit }) => {
           <div>
             <div className="flex items-center gap-0.5">
               <span className="text-xl font-extrabold tracking-tight text-[#0A2540] dark:text-white">
-                Sanjse<span className="text-[#D4AF37] font-bold">SEO</span>
+                Sanjose<span className="text-[#D4AF37] font-bold">SEO</span>
               </span>
             </div>
             <span className="text-[10px] uppercase font-bold tracking-widest text-[#627D98] dark:text-[#E5C882] block -mt-1">

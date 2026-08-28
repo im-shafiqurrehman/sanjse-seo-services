@@ -8,7 +8,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenAudit }) => {
-  const whatsappUrl = "https://wa.me/923376248458?text=Hello%20Sanjse%20SEO%2C%20I%20would%20like%20to%20discuss%20SEO%20services%20for%20my%20business.";
+  const whatsappUrl = "https://wa.me/923376248458?text=Hello%20Sanjose%20SEO%2C%20I%20would%20like%20to%20discuss%20SEO%20services%20for%20my%20business.";
 
   const WhatsAppIcon = ({ className = 'h-5 w-5' }: { className?: string }) => (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

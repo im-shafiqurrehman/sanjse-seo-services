@@ -26,7 +26,7 @@ export const WhySanjseSection: React.FC<WhySanjseSectionProps> = ({ onOpenAudit 
             </h2>
 
             <p className="text-base text-[#334E68] dark:text-slate-300 leading-relaxed">
-              At Sanjse SEO Services, we believe high search rankings shouldn’t be a mystery or a game of risky shortcuts. Modern search engine algorithms reward websites that offer superior user experience, fast technical foundations, and genuinely helpful content that answers searcher intent.
+              At Sanjose SEO Services, we believe high search rankings shouldn’t be a mystery or a game of risky shortcuts. Modern search engine algorithms reward websites that offer superior user experience, fast technical foundations, and genuinely helpful content that answers searcher intent.
             </p>
 
             <p className="text-sm text-[#334E68] dark:text-slate-300 leading-relaxed">

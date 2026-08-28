@@ -21,7 +21,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
               </div>
               <div>
                 <span className="text-xl font-extrabold tracking-tight text-[#0A2540] dark:text-white">
-                  Sanjse<span className="text-[#D4AF37] font-semibold">SEO</span>
+                  Sanjose<span className="text-[#D4AF37] font-semibold">SEO</span>
                 </span>
                 <span className="text-[10px] uppercase font-bold tracking-widest text-[#627D98] dark:text-slate-400 block -mt-1">
                   San Jose, California
@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-[#334E68] dark:text-slate-300">
               <li><a href="/" className="hover:text-[#1E40AF] dark:hover:text-[#E5C882] transition-colors">Home</a></li>
-              <li><a href="/about" className="hover:text-[#1E40AF] dark:hover:text-[#E5C882] transition-colors">About Sanjse</a></li>
+              <li><a href="/about" className="hover:text-[#1E40AF] dark:hover:text-[#E5C882] transition-colors">About Sanjose</a></li>
               <li><a href="/services" className="hover:text-[#1E40AF] dark:hover:text-[#E5C882] transition-colors">All Services</a></li>
               <li><a href="/process" className="hover:text-[#1E40AF] dark:hover:text-[#E5C882] transition-colors">SEO Process</a></li>
               <li><a href="/results" className="hover:text-[#1E40AF] dark:hover:text-[#E5C882] transition-colors">Results & ROI</a></li>
@@ -127,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
 
         {/* Bottom Legal Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#627D98] dark:text-slate-400">
-          <p>© 2026 Sanjse SEO Services. All rights reserved. Clean, minimal, high-performance SEO.</p>
+          <p>© 2026 Sanjose SEO Services. All rights reserved. Clean, minimal, high-performance SEO.</p>
           <div className="flex items-center gap-4">
             <a href="/privacy" className="hover:text-[#0A2540] dark:hover:text-[#E5C882] transition-colors">Privacy Policy</a>
             <a href="/terms" className="hover:text-[#0A2540] dark:hover:text-[#E5C882] transition-colors">Terms of Service</a>

@@ -47,7 +47,7 @@ export const AuthPage: React.FC<AuthPageProps> = ({ mode }) => {
     <main className="flex-1 flex items-center justify-center px-4 py-20 bg-[#FAF6EB]/50 dark:bg-[#07172C]">
       <form onSubmit={handleSubmit} className="w-full max-w-md bg-white dark:bg-[#0E2F54] border border-[#E5C882] dark:border-[#1E3A8A] rounded-2xl p-6 sm:p-8 shadow-xl">
         <h1 className="text-2xl font-extrabold text-[#0A2540] dark:text-white">{isSignup ? 'Create your account' : 'Sign in'}</h1>
-        <p className="mt-2 text-sm text-[#627D98] dark:text-slate-400">{isSignup ? 'Create an account to access your Sanjse workspace.' : 'Sign in to continue to your Sanjse workspace.'}</p>
+        <p className="mt-2 text-sm text-[#627D98] dark:text-slate-400">{isSignup ? 'Create an account to access your Sanjose workspace.' : 'Sign in to continue to your Sanjose workspace.'}</p>
 
         {isSignup && (
           <label className="block mt-6 text-xs font-bold text-[#0A2540] dark:text-white">
