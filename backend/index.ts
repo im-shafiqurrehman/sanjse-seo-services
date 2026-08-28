@@ -14,17 +14,26 @@ const currentDirectory = path.dirname(currentFile);
 const mongoUri = process.env.MONGO_URI || process.env.Mongo_URI;
 const databaseName = process.env.MONGO_DB_NAME || 'sanjseSeo';
 const sessionSecret = process.env.SESSION_SECRET || randomBytes(32).toString('hex');
-const frontendUrl = process.env.FRONTEND_URL || process.env.APP_URL;
-const sessionCookie = (token: string, maxAge = 60 * 60 * 24) => `sanjse_session=${token}; HttpOnly; Path=/; Max-Age=${maxAge}; SameSite=${frontendUrl && process.env.VERCEL === '1' ? 'None' : 'Lax'}${frontendUrl && process.env.VERCEL === '1' ? '; Secure' : isProduction ? '; Secure' : ''}`;
+const configuredFrontendUrl = process.env.FRONTEND_URL || process.env.APP_URL;
+const deployedFrontendUrl = 'https://sanjse-seo-services-frontend.vercel.app';
+const allowedFrontendOrigins = new Set(
+  [deployedFrontendUrl, configuredFrontendUrl]
+    .filter((origin): origin is string => Boolean(origin))
+    .map((origin) => origin.replace(/\/$/, '')),
+);
+const isVercelDeployment = process.env.VERCEL === '1';
+const sessionCookie = (token: string, maxAge = 60 * 60 * 24) => `sanjse_session=${token}; HttpOnly; Path=/; Max-Age=${maxAge}; SameSite=${isVercelDeployment ? 'None' : 'Lax'}${isVercelDeployment || isProduction ? '; Secure' : ''}`;
 const mongoClient = mongoUri ? new MongoClient(mongoUri) : null;
 let database: ReturnType<MongoClient['db']> | null = null;
 let databaseConnection: Promise<void> | null = null;
 
 app.use(express.json({ limit: '20kb' }));
 app.use((request, response, next) => {
-  if (frontendUrl) {
-    response.setHeader('Access-Control-Allow-Origin', frontendUrl.replace(/\/$/, ''));
+  const requestOrigin = request.headers.origin;
+  if (requestOrigin && allowedFrontendOrigins.has(requestOrigin.replace(/\/$/, ''))) {
+    response.setHeader('Access-Control-Allow-Origin', requestOrigin);
     response.setHeader('Access-Control-Allow-Credentials', 'true');
+    response.setHeader('Vary', 'Origin');
   }
   response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   response.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,OPTIONS');
