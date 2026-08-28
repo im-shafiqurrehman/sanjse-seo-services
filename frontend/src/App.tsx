@@ -1,4 +1,7 @@
+ 'use client';
+
 import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { ThemeProvider } from './context/ThemeContext';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -25,7 +28,8 @@ function MainApp() {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
   const [auditPrefillService, setAuditPrefillService] = useState('');
   const [auditPrefillUrl, setAuditPrefillUrl] = useState('');
-  const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+  const pathname = usePathname();
+  const currentPath = pathname.replace(/\/$/, '') || '/';
 
   const handleOpenAudit = (serviceOrPlan?: string, url?: string) => {
     setAuditPrefillService(serviceOrPlan || '');
