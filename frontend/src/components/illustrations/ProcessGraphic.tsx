@@ -27,7 +27,7 @@ export const ProcessGraphic: React.FC<ProcessGraphicProps> = ({ activeStep, onSe
       items: ['Core Web Vitals acceleration', 'Schema structured data code', 'Authoritative topic clusters']
     },
     {
-      title: '04 Scale & Revenue',
+      title: '04 Measure & Improve',
       icon: TrendingUp,
       tag: 'Permanent Growth',
       items: ['Real-time Looker dashboard', 'Continuous link acquisition', 'Conversion rate optimization']

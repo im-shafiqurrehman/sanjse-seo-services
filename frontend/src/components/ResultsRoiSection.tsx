@@ -9,18 +9,14 @@ export const ResultsRoiSection: React.FC<ResultsRoiSectionProps> = ({ onOpenAudi
   // Calculator interactive state
   const [monthlyVisitors, setMonthlyVisitors] = useState<number>(2500);
   const [conversionRate, setConversionRate] = useState<number>(2.5); // %
+  const [closeRate, setCloseRate] = useState<number>(20); // %
   const [avgCustomerValue, setAvgCustomerValue] = useState<number>(650); // $
 
   // Calculations
-  const currentLeads = Math.round(monthlyVisitors * (conversionRate / 100));
-  const currentMonthlyRev = Math.round(currentLeads * avgCustomerValue);
-
-  // Projected 150% increase (2.5x traffic) + 20% conversion rate improvement from technical UX
-  const projectedVisitors = Math.round(monthlyVisitors * 2.5);
-  const projectedConvRate = Math.min(conversionRate * 1.2, 6.0);
-  const projectedLeads = Math.round(projectedVisitors * (projectedConvRate / 100));
-  const projectedMonthlyRev = Math.round(projectedLeads * avgCustomerValue);
-  const additionalAnnualRevenue = (projectedMonthlyRev - currentMonthlyRev) * 12;
+  const monthlyLeads = monthlyVisitors * (conversionRate / 100);
+  const monthlyCustomers = monthlyLeads * (closeRate / 100);
+  const monthlyRevenue = monthlyCustomers * avgCustomerValue;
+  const annualRevenue = monthlyRevenue * 12;
 
   return (
     <section id="results" className="py-20 lg:py-28 bg-[#FAF6EB]/50 dark:bg-[#07172C] transition-colors duration-200 relative overflow-hidden">
@@ -40,53 +36,53 @@ export const ResultsRoiSection: React.FC<ResultsRoiSectionProps> = ({ onOpenAudi
           </p>
         </div>
 
-        {/* 4 Illustrative Performance Highlights */}
+        {/* Planning model, not historical performance claims */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16">
           <div className="bg-white dark:bg-[#0E2F54] p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#1E3A8A] shadow-xs text-center hover:border-[#D4AF37] dark:hover:border-[#D4AF37] transition-all">
             <span className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] dark:text-[#E5C882] block mb-1">
-              +150%
+              4 inputs
             </span>
             <span className="text-xs sm:text-sm font-bold text-[#0A2540] dark:text-white block">
-              Organic Traffic Growth
+              Planning model
             </span>
             <span className="text-[11px] text-[#627D98] dark:text-slate-400 mt-1 block">
-              Average 6-month trajectory
+              Use your own baseline data
             </span>
           </div>
 
           <div className="bg-white dark:bg-[#0E2F54] p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#1E3A8A] shadow-xs text-center hover:border-[#D4AF37] dark:hover:border-[#D4AF37] transition-all">
             <span className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] dark:text-[#E5C882] block mb-1">
-              +85%
+              Lead rate
             </span>
             <span className="text-xs sm:text-sm font-bold text-[#0A2540] dark:text-white block">
-              Qualified Search Inquiries
+              Conversion assumption
             </span>
             <span className="text-[11px] text-[#627D98] dark:text-slate-400 mt-1 block">
-              High commercial search intent
+              Adjust the calculator below
             </span>
           </div>
 
           <div className="bg-white dark:bg-[#0E2F54] p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#1E3A8A] shadow-xs text-center hover:border-[#D4AF37] dark:hover:border-[#D4AF37] transition-all">
             <span className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] dark:text-[#E5C882] block mb-1">
-              3.2X
+              Close rate
             </span>
             <span className="text-xs sm:text-sm font-bold text-[#0A2540] dark:text-white block">
-              Average ROI Multiplier
+              Customer assumption
             </span>
             <span className="text-[11px] text-[#627D98] dark:text-slate-400 mt-1 block">
-              Compared to ongoing PPC costs
+              Set your sales conversion rate
             </span>
           </div>
 
           <div className="bg-white dark:bg-[#0E2F54] p-6 rounded-2xl border border-[#E2E8F0] dark:border-[#1E3A8A] shadow-xs text-center hover:border-[#D4AF37] dark:hover:border-[#D4AF37] transition-all">
             <span className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] dark:text-[#E5C882] block mb-1">
-              #1 Pack
+              No guarantee
             </span>
             <span className="text-xs sm:text-sm font-bold text-[#0A2540] dark:text-white block">
-              Google Maps Visibility
+              Search visibility
             </span>
             <span className="text-[11px] text-[#627D98] dark:text-slate-400 mt-1 block">
-              For core San Jose queries
+              Outcomes depend on many factors
             </span>
           </div>
         </div>
@@ -102,7 +98,7 @@ export const ResultsRoiSection: React.FC<ResultsRoiSectionProps> = ({ onOpenAudi
               Calculate Your Organic Search Revenue Potential
             </h3>
             <p className="text-sm text-[#334E68] dark:text-slate-300 mt-2">
-              Adjust the sliders below to estimate the annual revenue growth unlocked by moving to page one on Google and capturing high-intent search traffic in San Jose.
+              Adjust the inputs below to estimate a planning scenario. These calculations do not predict rankings or guarantee traffic, leads, customers, or revenue.
             </p>
           </div>
 
@@ -177,38 +173,51 @@ export const ResultsRoiSection: React.FC<ResultsRoiSectionProps> = ({ onOpenAudi
                 </div>
               </div>
 
+              {/* Slider 4: Close Rate */}
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs sm:text-sm font-bold text-[#0A2540] dark:text-slate-200">
+                  <span>Lead-to-Customer Rate:</span>
+                  <span className="text-[#1E40AF] dark:text-[#E5C882] font-mono text-base font-bold">{closeRate.toFixed(0)}%</span>
+                </div>
+                <input type="range" min="0" max="100" step="1" value={closeRate} onChange={(e) => setCloseRate(Number(e.target.value))} aria-label="Lead-to-customer rate" className="w-full h-2.5 bg-[#E2E8F0] dark:bg-[#0A2540] rounded-lg appearance-none cursor-pointer accent-[#1E40AF] dark:accent-[#D4AF37]" />
+                <div className="flex justify-between text-[11px] text-[#627D98] dark:text-slate-400"><span>0%</span><span>50%</span><span>100%</span></div>
+              </div>
+
             </div>
 
             {/* Projected Revenue Box (5 cols) */}
             <div className="lg:col-span-5 bg-[#FAF6EB] dark:bg-[#0A2540] border-2 border-[#E5C882] dark:border-[#D4AF37]/50 rounded-2xl p-6 sm:p-7 space-y-5 shadow-sm">
               <div className="border-b border-[#E5C882]/60 dark:border-[#1E3A8A] pb-3 flex items-center justify-between">
-                <span className="text-xs font-bold text-[#0A2540] dark:text-white">Estimated Annual Impact</span>
+                <span className="text-xs font-bold text-[#0A2540] dark:text-white">Planning Estimate</span>
                 <span className="text-[10px] font-bold text-[#0A2540] dark:text-[#FEF3C7] bg-white dark:bg-[#0E2F54] border border-[#E5C882] dark:border-[#D4AF37]/40 px-2 py-0.5 rounded">
-                  Compound Forecast
+                  User inputs
                 </span>
               </div>
 
               <div>
-                <p className="text-xs text-[#334E68] dark:text-slate-400 font-medium">Projected New Annual Revenue</p>
+                <p className="text-xs text-[#334E68] dark:text-slate-400 font-medium">Estimated Annual Revenue</p>
                 <p className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] dark:text-[#E5C882] mt-1 tracking-tight">
-                  +${additionalAnnualRevenue.toLocaleString()}
+                  ${annualRevenue.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                   <span className="text-xs font-normal text-[#627D98] dark:text-slate-400">/year</span>
                 </p>
                 <p className="text-xs text-[#0A2540] dark:text-slate-200 font-semibold mt-1">
-                  Based on projected {projectedVisitors.toLocaleString()} monthly visits & {projectedLeads} inquiries
+                  Based on {monthlyVisitors.toLocaleString()} visitors, {monthlyLeads.toFixed(1)} leads, and {monthlyCustomers.toFixed(1)} customers per month
                 </p>
               </div>
 
               <div className="space-y-2 text-xs text-[#334E68] dark:text-slate-300 pt-2 border-t border-[#E5C882]/60 dark:border-[#1E3A8A]">
                 <div className="flex justify-between">
-                  <span>Current est. monthly search leads:</span>
-                  <span className="font-bold text-[#0A2540] dark:text-white">{currentLeads} inquiries/mo</span>
+                  <span>Monthly visitors:</span>
+                  <span className="font-bold text-[#0A2540] dark:text-white">{monthlyVisitors.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Optimized monthly search leads:</span>
-                  <span className="font-bold text-[#1E40AF] dark:text-[#E5C882]">{projectedLeads} inquiries/mo</span>
+                  <span>Estimated monthly revenue:</span>
+                  <span className="font-bold text-[#1E40AF] dark:text-[#E5C882]">${monthlyRevenue.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span>
                 </div>
+                <div className="flex justify-between"><span>Estimated annual revenue:</span><span className="font-bold text-[#1E40AF] dark:text-[#E5C882]">${annualRevenue.toLocaleString(undefined, { maximumFractionDigits: 0 })}</span></div>
               </div>
+
+              <p className="text-[11px] leading-relaxed text-[#627D98] dark:text-slate-400">SEO projections are estimates for planning purposes only and are not guarantees of future traffic, leads, rankings, or revenue.</p>
 
               <button
                 onClick={onOpenAudit}

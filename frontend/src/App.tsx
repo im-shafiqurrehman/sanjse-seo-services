@@ -23,6 +23,7 @@ import { ScrollReveal } from './components/ScrollReveal';
 import { AuthPage } from './components/AuthPage';
 import { AdminPage } from './components/AdminPage';
 import { ProfilePage } from './components/ProfilePage';
+import { LegalPage } from './components/LegalPage';
 
 function MainApp() {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
@@ -47,6 +48,10 @@ function MainApp() {
         return <AdminPage />;
       case '/profile':
         return <ProfilePage />;
+      case '/privacy':
+        return <LegalPage type="privacy" />;
+      case '/terms':
+        return <LegalPage type="terms" />;
       case '/services':
         return <ScrollReveal><ServicesSection onOpenAudit={(service) => handleOpenAudit(service)} /></ScrollReveal>;
       case '/local-seo':

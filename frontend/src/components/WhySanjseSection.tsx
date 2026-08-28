@@ -51,7 +51,7 @@ export const WhySanjseSection: React.FC<WhySanjseSectionProps> = ({ onOpenAudit 
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">Live Transparent Reporting Dashboards</h4>
-                  <p className="text-xs text-[#334E68] dark:text-slate-300">Access your 24/7 Google Looker Studio dashboard showing exact keyword positions and organic lead conversions.</p>
+                  <p className="text-xs text-[#334E68] dark:text-slate-300">Access a Google Looker Studio dashboard showing agreed search and lead measures.</p>
                 </div>
               </div>
 

@@ -124,60 +124,7 @@ export const LOCAL_SAN_JOSE_AREAS: LocalArea[] = [
   { name: 'Milpitas & Berryessa', type: 'East Bay Gateway', highlight: 'Industrial supply, local trade & multi-location business queries' }
 ];
 
-export const TESTIMONIALS_DATA: Testimonial[] = [
-  {
-    id: 'test-1',
-    name: 'Marcus Vance',
-    role: 'Managing Partner',
-    company: 'Vance & Sterling Legal Group',
-    category: 'Professional Services',
-    location: 'Downtown San Jose, CA',
-    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
-    rating: 5,
-    quote: 'Sanjose SEO Services transformed our firm’s local presence. Within four months of their Google Maps and on-page optimization sprint, our consultation calls from San Jose organic search tripled. Their transparent weekly reporting gave us complete clarity on what work was being done.',
-    resultMetric: '+210%',
-    resultLabel: 'Inbound Legal Consultation Calls'
-  },
-  {
-    id: 'test-2',
-    name: 'Elena Rostova',
-    role: 'Founder & CEO',
-    company: 'Apex Cloud Logistics',
-    category: 'Tech & B2B',
-    location: 'North San Jose, CA',
-    avatarUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=200&q=80',
-    rating: 5,
-    quote: 'We were invisible for high-value B2B keywords in the Silicon Valley corridor. Sanjose restructured our technical architecture, eliminated crawl errors, and produced authoritative topic clusters that moved us to page one for our core enterprise logistics solutions.',
-    resultMetric: 'Page 1',
-    resultLabel: 'For 18 High-Value B2B Keywords'
-  },
-  {
-    id: 'test-3',
-    name: 'David Chen',
-    role: 'Owner & Operator',
-    company: 'Bay Heritage Dental & Orthodontics',
-    category: 'Local Business',
-    location: 'Willow Glen, San Jose, CA',
-    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
-    rating: 5,
-    quote: 'As a local practice, appearing in the Google Maps 3-pack is everything. Sanjose optimized our Google Business Profile, cleaned up our citations across dozens of directories, and got us ranked #1 for pediatric and cosmetic dental queries across Willow Glen and Campbell.',
-    resultMetric: '#1 Rank',
-    resultLabel: 'In Local Google Maps 3-Pack'
-  },
-  {
-    id: 'test-4',
-    name: 'Sarah Jenkins',
-    role: 'Marketing Director',
-    company: 'Solaria Solar & Energy Systems',
-    category: 'Local Business',
-    location: 'Santa Clara & San Jose, CA',
-    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
-    rating: 5,
-    quote: 'Unlike agencies that promise overnight miracles with shady shortcuts, Sanjose built an honest, sustainable strategy. Our organic leads now cost 65% less than our paid Google Ads clicks, delivering consistent business month after month.',
-    resultMetric: '-65%',
-    resultLabel: 'Lower Cost Per Acquisition vs Ads'
-  }
-];
+export const TESTIMONIALS_DATA: Testimonial[] = [];
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
@@ -287,7 +234,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-8',
     category: 'Pricing & ROI',
-    question: 'Do you guarantee #1 rankings on Google?',
-    answer: 'No ethical SEO agency can honestly guarantee a #1 ranking on Google, because search engine algorithms evolve constantly and Google explicitly warns against agencies making guaranteed ranking claims. What we do guarantee is 100% white-hat methodologies, transparent weekly reporting, rigorous technical execution, and data-backed strategies designed for sustainable traffic growth.'
+    question: 'Can you guarantee rankings on Google?',
+    answer: 'No agency can guarantee a specific Google ranking because search algorithms and competitors change. We use white-hat technical SEO, useful content, local optimization, and transparent reporting to improve search visibility and measure progress responsibly.'
   }
 ];

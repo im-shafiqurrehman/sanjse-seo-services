@@ -101,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
               </div>
               <div className="flex items-center gap-2 text-xs text-[#627D98] dark:text-slate-400">
                 <Clock className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                <span>Mon – Fri: 8:30 AM – 6:00 PM PST</span>
+                <span>Mon – Fri: 8:30 AM – 6:00 PM San Jose time</span>
               </div>
             </div>
           </div>

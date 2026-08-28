@@ -116,15 +116,15 @@ export const HeroSeoGraphic: React.FC = () => {
               <div>
                 <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Monthly Organic Clicks</p>
                 <div className="flex items-baseline gap-2 mt-0.5">
-                  <span className="text-2xl font-bold text-zinc-950 dark:text-white">14,850</span>
+                  <span className="text-2xl font-bold text-zinc-950 dark:text-white">Your data</span>
                   <span className="text-xs font-bold text-zinc-950 dark:text-white bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded border border-zinc-200 dark:border-zinc-700 flex items-center">
-                    +184% YoY
+                    Connect Search Console
                   </span>
                 </div>
               </div>
               <div className="text-right">
                 <p className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">Est. Search Value</p>
-                <p className="text-base font-bold text-zinc-950 dark:text-white mt-0.5">$32,400<span className="text-xs font-normal text-zinc-500 dark:text-zinc-400">/mo</span></p>
+                <p className="text-base font-bold text-zinc-950 dark:text-white mt-0.5">Measured value</p>
               </div>
             </div>
 
@@ -177,7 +177,7 @@ export const HeroSeoGraphic: React.FC = () => {
               </div>
               <div className="bg-white dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/80 rounded-lg p-2.5 text-center">
                 <span className="text-[10px] text-zinc-500 dark:text-zinc-400 block">GBP Map Calls</span>
-                <span className="text-sm font-bold text-zinc-950 dark:text-white">+220%</span>
+                <span className="text-sm font-bold text-zinc-950 dark:text-white">Track calls</span>
               </div>
               <div className="bg-white dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/80 rounded-lg p-2.5 text-center">
                 <span className="text-[10px] text-zinc-500 dark:text-zinc-400 block">Bounce Rate</span>

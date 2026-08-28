@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import '../src/index.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.sanjoseagencyseo.com'),
   title: 'SEO Services San Jose | Local SEO & Digital Marketing | Sanjose SEO Services',
   description: 'Sanjose SEO Services helps San Jose businesses improve search visibility, attract qualified organic traffic, and grow with data-driven SEO strategies, local SEO, and technical optimization.',
   keywords: ['SEO services San Jose', 'local SEO San Jose', 'technical SEO San Jose', 'Google Maps SEO San Jose'],
@@ -10,13 +11,23 @@ export const metadata: Metadata = {
     title: 'SEO Services San Jose | Sanjose SEO Services',
     description: 'Helping San Jose businesses get found, grow traffic, and turn search demand into sustainable revenue with data-driven SEO.',
     type: 'website',
+    url: 'https://www.sanjoseagencyseo.com',
   },
+  alternates: { canonical: 'https://www.sanjoseagencyseo.com' },
+};
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Sanjose SEO Services',
+  url: 'https://www.sanjoseagencyseo.com',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className="bg-white text-[#0F172A] antialiased selection:bg-[#FEF3C7] selection:text-[#1E40AF] font-['Manrope',sans-serif]">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         {children}
       </body>
     </html>

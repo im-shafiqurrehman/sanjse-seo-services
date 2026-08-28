@@ -124,24 +124,24 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ onOpenAudit }) =
 
         </div>
 
-        {/* Sleek Bottom Metric Stats Row */}
+        {/* Bottom process summary without unsupported performance claims */}
         <div className="mt-14 pt-8 border-t border-[#E2E8F0] dark:border-[#1E3A8A] flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-8 sm:gap-14">
             <div className="text-center md:text-left">
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">+150%</div>
-              <div className="text-[11px] text-[#627D98] dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">Organic Traffic</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">01</div>
+              <div className="text-[11px] text-[#627D98] dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">Audit first</div>
             </div>
             <div className="text-center md:text-left">
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">+85%</div>
-              <div className="text-[11px] text-[#627D98] dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">Qualified Leads</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">02</div>
+              <div className="text-[11px] text-[#627D98] dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">Prioritize work</div>
             </div>
             <div className="text-center md:text-left">
-              <div className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">3.2X</div>
-              <div className="text-[11px] text-[#627D98] dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">ROI Increase</div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">03</div>
+              <div className="text-[11px] text-[#627D98] dark:text-slate-400 font-bold uppercase tracking-wider mt-0.5">Measure progress</div>
             </div>
           </div>
           <div className="text-center md:text-right">
-            <p className="text-xs sm:text-[13px] font-medium text-[#334E68] dark:text-slate-300">Ready to rank #1 across San Jose & Bay Area?</p>
+            <p className="text-xs sm:text-[13px] font-medium text-[#334E68] dark:text-slate-300">Ready to improve search visibility across San Jose?</p>
             <button
               onClick={onOpenAudit}
               className="text-[#0A2540] dark:text-[#E5C882] font-bold text-sm underline underline-offset-4 cursor-pointer mt-0.5 hover:text-[#1E40AF] dark:hover:text-white transition-colors"

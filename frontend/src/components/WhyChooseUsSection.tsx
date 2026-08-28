@@ -11,7 +11,7 @@ export const WhyChooseUsSection: React.FC = () => {
     {
       icon: FileText,
       title: 'Transparent Reporting',
-      desc: 'Live 24/7 Google Looker Studio dashboards and monthly executive summaries so you know exactly what is being done and why.'
+      desc: 'Clear Google Looker Studio dashboards and regular executive summaries so you know exactly what is being done and why.'
     },
     {
       icon: Settings,

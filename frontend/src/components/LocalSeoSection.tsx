@@ -155,7 +155,7 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
                         {currentArea.name} ({currentArea.type})
                       </span>
                       <span className="px-2.5 py-0.5 bg-[#0A2540] dark:bg-[#D4AF37] text-[#FAF6EB] dark:text-[#0A2540] text-[10px] font-extrabold rounded-full">
-                        #1 Rank in 3-Pack
+                        Google Maps visibility
                       </span>
                     </div>
 
@@ -171,10 +171,7 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
                         <div>
                           <p className="text-xs font-bold text-[#0A2540] dark:text-white">Your Business Listing</p>
                           <div className="flex items-center text-[#D4AF37] text-[10px]">
-                            {[...Array(5)].map((_, i) => (
-                              <Star key={i} className="w-2.5 h-2.5 fill-current" />
-                            ))}
-                            <span className="text-[#627D98] dark:text-slate-400 ml-1">(5.0) • {currentArea.name}</span>
+                            <span className="text-[#627D98] dark:text-slate-400">Track your profile data • {currentArea.name}</span>
                           </div>
                         </div>
                       </div>

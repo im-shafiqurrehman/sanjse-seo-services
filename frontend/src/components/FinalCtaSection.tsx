@@ -85,8 +85,8 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenAudit })
           Let’s find the revenue opportunities hiding in your website and build a clear, data-driven roadmap to the top of Google Search and Google Maps in San Jose.
         </p>
 
-        {/* Dual Conversion Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+        {/* Primary conversion action */}
+        <div className="flex items-center justify-center mt-8">
           <button
             onClick={onOpenAudit}
             className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#0A2540] via-[#1E40AF] to-[#0A2540] hover:from-[#1E40AF] hover:to-[#2563EB] text-white text-sm sm:text-base font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer border border-[#D4AF37]/50"
@@ -96,15 +96,6 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenAudit })
             <ArrowRight className="w-4 h-4 text-[#D4AF37]" />
           </button>
 
-          <a
-            href="https://wa.me/923376248458?text=Hello%20Sanjose%20SEO%20Services%2C%20I%20would%20like%20to%20discuss%20an%20SEO%20project."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full sm:w-auto px-8 py-4 bg-white dark:bg-[#0E2F54] hover:bg-[#FAF6EB] dark:hover:bg-[#1E40AF] text-[#0A2540] dark:text-white border border-[#E5C882] dark:border-[#D4AF37]/40 text-sm sm:text-base font-bold rounded-xl shadow-xs transition-all flex items-center justify-center gap-2"
-          >
-            <Phone className="w-4 h-4 text-[#D4AF37]" />
-            <span>Chat on WhatsApp</span>
-          </a>
         </div>
 
         <form onSubmit={handleSubmit} className="max-w-3xl mx-auto mt-10 text-left bg-white/80 dark:bg-[#0A2540]/80 border border-[#E5C882] dark:border-[#1E3A8A] rounded-2xl p-5 sm:p-7 shadow-sm">
