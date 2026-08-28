@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { LogOut, Mail, ShieldCheck, UserRound } from 'lucide-react';
+import { apiUrl } from '../lib/api';
 
 type Profile = { name: string; email: string; role: string };
 
@@ -8,7 +9,7 @@ export const ProfilePage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/auth/me')
+    fetch(apiUrl('/api/auth/me'), { credentials: 'include' })
       .then((response) => response.json())
       .then((result) => {
         if (!result.authenticated) {
@@ -24,7 +25,7 @@ export const ProfilePage: React.FC = () => {
   }, []);
 
   const signOut = async () => {
-    await fetch('/api/auth/signout', { method: 'POST' });
+    await fetch(apiUrl('/api/auth/signout'), { method: 'POST', credentials: 'include' });
     window.location.href = '/signin';
   };
 

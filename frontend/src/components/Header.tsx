@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Menu, X, Sun, Moon, UserRound } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { apiUrl } from '../lib/api';
 
 interface HeaderProps {
   onOpenAudit: () => void;
@@ -25,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAudit }) => {
   }, []);
 
   useEffect(() => {
-    fetch('/api/auth/me')
+    fetch(apiUrl('/api/auth/me'), { credentials: 'include' })
       .then((response) => response.json())
       .then((result) => setCurrentUser(result.authenticated ? result.user : null))
       .catch(() => setCurrentUser(null));
@@ -108,7 +109,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAudit }) => {
             </a>
             <div className="invisible absolute right-0 top-full z-50 mt-2 w-48 translate-y-1 rounded-xl border border-[#E5C882] dark:border-[#1E3A8A] bg-white dark:bg-[#0E2F54] p-3 opacity-0 shadow-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
               <p className="truncate px-2 py-1 text-sm font-bold text-[#0A2540] dark:text-white">{currentUser.name}</p>
-              <button onClick={() => { void (async () => { await fetch('/api/auth/signout', { method: 'POST' }); window.location.href = '/'; })(); }} className="mt-2 flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-xs font-semibold text-[#334E68] hover:bg-[#FAF6EB] dark:text-slate-300 dark:hover:bg-[#07172C] cursor-pointer"><span>Logout</span></button>
+              <button onClick={() => { void (async () => { await fetch(apiUrl('/api/auth/signout'), { method: 'POST', credentials: 'include' }); window.location.href = '/'; })(); }} className="mt-2 flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left text-xs font-semibold text-[#334E68] hover:bg-[#FAF6EB] dark:text-slate-300 dark:hover:bg-[#07172C] cursor-pointer"><span>Logout</span></button>
             </div>
           </div>
         )}

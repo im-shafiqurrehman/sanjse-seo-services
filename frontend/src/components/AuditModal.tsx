@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Sparkles, CheckCircle2, ArrowRight, Lock, Globe, Phone, Mail, Building, User } from 'lucide-react';
 import { AuditFormData } from '../types';
+import { apiUrl } from '../lib/api';
 
 interface AuditModalProps {
   isOpen: boolean;
@@ -58,7 +59,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({
     setSubmitError('');
 
     try {
-      const response = await fetch('/api/audit-requests', {
+      const response = await fetch(apiUrl('/api/audit-requests'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

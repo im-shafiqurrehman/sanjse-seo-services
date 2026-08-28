@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, Phone, CheckCircle2, Mail, User, Send } from 'lucide-react';
+import { apiUrl } from '../lib/api';
 
 interface FinalCtaSectionProps {
   onOpenAudit: () => void;
@@ -38,7 +39,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenAudit })
     setValidationErrors({});
 
     try {
-      const response = await fetch('/api/contact-requests', {
+      const response = await fetch(apiUrl('/api/contact-requests'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: trimmedName, email: trimmedEmail, phone: trimmedPhone, message: trimmedMessage }),

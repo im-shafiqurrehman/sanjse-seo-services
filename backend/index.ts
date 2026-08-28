@@ -14,10 +14,26 @@ const currentDirectory = path.dirname(currentFile);
 const mongoUri = process.env.MONGO_URI || process.env.Mongo_URI;
 const databaseName = process.env.MONGO_DB_NAME || 'sanjseSeo';
 const sessionSecret = process.env.SESSION_SECRET || randomBytes(32).toString('hex');
+const frontendUrl = process.env.FRONTEND_URL || process.env.APP_URL;
+const sessionCookie = (token: string, maxAge = 60 * 60 * 24) => `sanjse_session=${token}; HttpOnly; Path=/; Max-Age=${maxAge}; SameSite=${frontendUrl && process.env.VERCEL === '1' ? 'None' : 'Lax'}${frontendUrl && process.env.VERCEL === '1' ? '; Secure' : isProduction ? '; Secure' : ''}`;
 const mongoClient = mongoUri ? new MongoClient(mongoUri) : null;
 let database: ReturnType<MongoClient['db']> | null = null;
+let databaseConnection: Promise<void> | null = null;
 
 app.use(express.json({ limit: '20kb' }));
+app.use((request, response, next) => {
+  if (frontendUrl) {
+    response.setHeader('Access-Control-Allow-Origin', frontendUrl.replace(/\/$/, ''));
+    response.setHeader('Access-Control-Allow-Credentials', 'true');
+  }
+  response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  response.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,OPTIONS');
+  if (request.method === 'OPTIONS') {
+    response.sendStatus(204);
+    return;
+  }
+  next();
+});
 
 const requiredEnvironment = ['CONTACT_EMAIL', 'SMTP_HOST', 'SMTP_USER', 'SMTP_PASS'];
 const hasPlaceholderValue = (value: string | undefined) => !value || /^(you@example\.com|your-app-password|MY_|YOUR_)/i.test(value);
@@ -38,6 +54,27 @@ const mailTransport = missingEnvironment.length === 0
 const usersCollection = () => database?.collection('users');
 const auditRequestsCollection = () => database?.collection('auditRequests');
 const contactRequestsCollection = () => database?.collection('contactRequests');
+
+const ensureDatabase = async () => {
+  if (database || !mongoClient) return;
+  databaseConnection ??= mongoClient.connect().then(async () => {
+    database = mongoClient.db(databaseName);
+    await usersCollection()!.createIndex({ email: 1 }, { unique: true });
+    await auditRequestsCollection()!.createIndex({ createdAt: -1 });
+    await contactRequestsCollection()!.createIndex({ createdAt: -1 });
+  });
+  await databaseConnection;
+};
+
+app.use(async (_request, response, next) => {
+  try {
+    await ensureDatabase();
+    next();
+  } catch (error) {
+    console.error('Unable to connect to MongoDB:', error);
+    response.status(503).json({ error: 'Database is not available.' });
+  }
+});
 
 const hashPassword = (password: string) => {
   const salt = randomBytes(16).toString('hex');
@@ -117,7 +154,7 @@ app.post('/api/auth/signup', async (request, response) => {
   if (await usersCollection()!.findOne({ email: safeEmail })) return response.status(409).json({ error: 'An account with this email already exists.' });
   const role = process.env.ADMIN_EMAIL?.toLowerCase() === safeEmail ? 'admin' : 'user';
   const result = await usersCollection()!.insertOne({ name: safeName, email: safeEmail, passwordHash: hashPassword(password), role, createdAt: new Date() });
-  response.setHeader('Set-Cookie', `sanjse_session=${createSessionToken(result.insertedId.toHexString(), role)}; HttpOnly; Path=/; SameSite=Lax${isProduction ? '; Secure' : ''}`);
+  response.setHeader('Set-Cookie', sessionCookie(createSessionToken(result.insertedId.toHexString(), role)));
   return response.status(201).json({ user: { id: result.insertedId, name: safeName, email: safeEmail, role } });
 });
 
@@ -126,12 +163,12 @@ app.post('/api/auth/signin', async (request, response) => {
   const safeEmail = String(email || '').trim().toLowerCase();
   const user = database && await usersCollection()!.findOne({ email: safeEmail });
   if (!user || typeof password !== 'string' || !verifyPassword(password, user.passwordHash)) return response.status(401).json({ error: 'Invalid email or password.' });
-  response.setHeader('Set-Cookie', `sanjse_session=${createSessionToken(user._id.toHexString(), user.role)}; HttpOnly; Path=/; SameSite=Lax${isProduction ? '; Secure' : ''}`);
+  response.setHeader('Set-Cookie', sessionCookie(createSessionToken(user._id.toHexString(), user.role)));
   return response.json({ user: { id: user._id, name: user.name, email: user.email, role: user.role } });
 });
 
 app.post('/api/auth/signout', (_request, response) => {
-  response.setHeader('Set-Cookie', 'sanjse_session=; HttpOnly; Path=/; Max-Age=0; SameSite=Lax');
+  response.setHeader('Set-Cookie', sessionCookie('', 0));
   response.json({ ok: true });
 });
 
@@ -354,21 +391,8 @@ if (isProduction) {
 }
 
 const start = async () => {
-  if (mongoClient) {
-    try {
-      await mongoClient.connect();
-      database = mongoClient.db(databaseName);
-      await usersCollection()!.createIndex({ email: 1 }, { unique: true });
-      await auditRequestsCollection()!.createIndex({ createdAt: -1 });
-      await contactRequestsCollection()!.createIndex({ createdAt: -1 });
-      console.log(`MongoDB connected to ${databaseName}`);
-    } catch (error) {
-      console.error('Unable to connect to MongoDB:', error);
-    }
-  } else {
-    console.warn('MongoDB is disabled. Set MONGO_URI in backend/.env.');
-  }
-
+  await ensureDatabase();
+  console.log(`MongoDB connected to ${databaseName}`);
   const server = app.listen(port, () => {
     console.log(`Sanjse backend listening on http://localhost:${port}`);
     if (missingEnvironment.length > 0) {
@@ -385,4 +409,8 @@ const start = async () => {
   });
 };
 
-void start();
+if (process.env.VERCEL !== '1') {
+  void start();
+}
+
+export default app;

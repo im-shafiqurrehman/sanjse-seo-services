@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRight, Mail, User } from 'lucide-react';
+import { apiUrl } from '../lib/api';
 
 interface AuthPageProps {
   mode: 'signin' | 'signup';
@@ -26,10 +27,11 @@ export const AuthPage: React.FC<AuthPageProps> = ({ mode }) => {
     }
     setIsSubmitting(true);
     try {
-      const response = await fetch(`/api/auth/${isSignup ? 'signup' : 'signin'}`, {
+      const response = await fetch(apiUrl(`/api/auth/${isSignup ? 'signup' : 'signin'}`), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, password }),
+        credentials: 'include',
       });
       const result = await response.json().catch(() => null);
       if (!response.ok) throw new Error(result?.error || 'Authentication failed.');

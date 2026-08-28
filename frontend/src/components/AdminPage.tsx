@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { LogOut, Mail, RefreshCw } from 'lucide-react';
+import { apiUrl } from '../lib/api';
 
 type LeadStatus = 'pending' | 'received' | 'completed';
 type Lead = { _id: string; createdAt: string; status: LeadStatus; name?: string; fullName?: string; email: string; phone?: string; message?: string; businessName?: string; websiteUrl?: string; primaryGoal?: string };
@@ -11,7 +12,7 @@ export const AdminPage: React.FC = () => {
 
   const loadLeads = async () => {
     setLoading(true);
-    const response = await fetch('/api/admin/leads');
+    const response = await fetch(apiUrl('/api/admin/leads'), { credentials: 'include' });
     if (response.status === 401) {
       window.location.href = '/signin';
       return;
@@ -25,15 +26,16 @@ export const AdminPage: React.FC = () => {
   useEffect(() => { void loadLeads(); }, []);
 
   const signOut = async () => {
-    await fetch('/api/auth/signout', { method: 'POST' });
+    await fetch(apiUrl('/api/auth/signout'), { method: 'POST', credentials: 'include' });
     window.location.href = '/signin';
   };
 
   const updateStatus = async (lead: Lead, type: 'audit' | 'contact', status: LeadStatus) => {
-    const response = await fetch(`/api/admin/leads/${type}/${lead._id}/status`, {
+    const response = await fetch(apiUrl(`/api/admin/leads/${type}/${lead._id}/status`), {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status }),
+      credentials: 'include',
     });
     if (!response.ok) {
       setError('Unable to update lead status.');
