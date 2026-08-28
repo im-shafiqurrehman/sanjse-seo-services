@@ -49,7 +49,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenAudit })
             SEO Services That Drive Real Growth
           </h2>
           <p className="text-base sm:text-lg text-[#334E68] dark:text-slate-300 mt-4 leading-relaxed">
-            From technical foundations to content authority and local Google Maps domination, we build SEO strategies engineered around measurable revenue outcomes for San Jose businesses.
+              From technical foundations to content and local search visibility, we build SEO strategies around your San Jose business goals and measurable inputs.
           </p>
         </div>
 

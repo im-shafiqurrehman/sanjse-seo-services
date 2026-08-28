@@ -40,7 +40,7 @@ export const WhySanjseSection: React.FC<WhySanjseSectionProps> = ({ onOpenAudit 
                   ✓
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">100% White-Hat Google Compliance</h4>
+                  <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">Ethical SEO Practices</h4>
                   <p className="text-xs text-[#334E68] dark:text-slate-300">We never use private blog networks (PBNs) or automated spam links that risk Google manual penalties.</p>
                 </div>
               </div>

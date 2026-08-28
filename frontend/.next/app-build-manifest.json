@@ -1,48 +1,15 @@
 {
   "pages": {
-    "/_not-found/page": [
-      "static/chunks/webpack-5f15ffddb826c25b.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-b2d7639fc2cd5a93.js",
-      "static/chunks/app/_not-found/page-251200b541d6c30a.js"
-    ],
-    "/llms.txt/route": [
-      "static/chunks/webpack-5f15ffddb826c25b.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-b2d7639fc2cd5a93.js",
-      "static/chunks/app/llms.txt/route-cce67ddaf0f7bd24.js"
-    ],
-    "/sitemap.xml/route": [
-      "static/chunks/webpack-5f15ffddb826c25b.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-b2d7639fc2cd5a93.js",
-      "static/chunks/app/sitemap.xml/route-cce67ddaf0f7bd24.js"
-    ],
-    "/robots.txt/route": [
-      "static/chunks/webpack-5f15ffddb826c25b.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-b2d7639fc2cd5a93.js",
-      "static/chunks/app/robots.txt/route-cce67ddaf0f7bd24.js"
-    ],
     "/layout": [
-      "static/chunks/webpack-5f15ffddb826c25b.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-b2d7639fc2cd5a93.js",
-      "static/css/bf77ef60c539968a.css",
-      "static/chunks/app/layout-3f347a72faad2f98.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/[[...slug]]/page": [
-      "static/chunks/webpack-5f15ffddb826c25b.js",
-      "static/chunks/4bd1b696-c023c6e3521b1417.js",
-      "static/chunks/255-c5a697ddbf82d774.js",
-      "static/chunks/main-app-b2d7639fc2cd5a93.js",
-      "static/chunks/783-fae9069350b8532a.js",
-      "static/chunks/app/[[...slug]]/page-57618341d4740d6a.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[[...slug]]/page.js"
     ]
   }
 }

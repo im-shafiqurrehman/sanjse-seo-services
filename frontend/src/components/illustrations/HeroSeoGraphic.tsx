@@ -221,7 +221,7 @@ export const HeroSeoGraphic: React.FC = () => {
                 <span className="text-xs font-semibold text-zinc-900 dark:text-zinc-100">google maps seo san jose</span>
               </div>
               <span className="text-xs font-bold text-zinc-950 dark:text-white bg-zinc-100 dark:bg-zinc-800 px-2 py-0.5 rounded">
-                #1 in 3-Pack
+                Local visibility
               </span>
             </div>
 
@@ -273,7 +273,7 @@ export const HeroSeoGraphic: React.FC = () => {
                   <CheckCircle2 className="w-4 h-4 text-zinc-950 dark:text-white" />
                   Google Business Profile Sync
                 </span>
-                <span className="font-semibold text-zinc-900 dark:text-zinc-100">Synced (80+ Dirs)</span>
+                <span className="font-semibold text-zinc-900 dark:text-zinc-100">Directory review</span>
               </div>
             </div>
           </div>

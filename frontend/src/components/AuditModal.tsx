@@ -125,7 +125,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({
                 <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>100% Free • No Obligation Diagnostic</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0A2540] dark:text-white">
                 Get Your Free 15-Point SEO Audit
               </h3>
               <p className="text-xs sm:text-sm text-[#334E68] dark:text-slate-300 mt-1.5">

@@ -21,7 +21,7 @@ export const WhyChooseUsSection: React.FC = () => {
     {
       icon: ShieldCheck,
       title: 'Long-Term Sustainable Growth',
-      desc: 'We strictly practice 100% white-hat optimization that builds lasting domain equity and insulates your website against algorithm shifts.'
+      desc: 'We use ethical SEO practices, avoid manipulative shortcuts, and build a search presence that can adapt as algorithms and competitors change.'
     }
   ];
 

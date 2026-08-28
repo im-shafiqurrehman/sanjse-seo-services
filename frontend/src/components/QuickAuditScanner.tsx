@@ -25,19 +25,19 @@ export const QuickAuditScanner: React.FC<QuickAuditScannerProps> = ({ onOpenFull
     setIsScanning(true);
     setScanResult(null);
 
-    // Simulate authentic SEO crawl analysis
+    // Provide a preliminary checklist; this is not a measured performance audit.
     setTimeout(() => {
       setIsScanning(false);
       // Clean domain
       const cleanUrl = url.replace(/^(https?:\/\/)?(www\.)?/, '').split('/')[0];
       setScanResult({
-        score: Math.floor(Math.random() * (78 - 62 + 1)) + 62, // realistic initial unoptimized score
+        score: 0,
         url: cleanUrl,
-        speed: '1.9s (Needs Speed Optimization)',
-        mobile: 'Mobile Responsive (Minor Viewport Shift)',
-        indexing: 'Indexable (Missing Schema Structured Data)',
-        localRank: 'Not in Google Maps 3-Pack',
-        issuesFound: 7
+        speed: 'Requires measurement',
+        mobile: 'Requires measurement',
+        indexing: 'Requires measurement',
+        localRank: 'Requires measurement',
+        issuesFound: 0
       });
     }, 1400);
   };
@@ -50,7 +50,7 @@ export const QuickAuditScanner: React.FC<QuickAuditScannerProps> = ({ onOpenFull
           <span>Free Instant Website Health Check</span>
         </div>
         <h3 className="text-xl sm:text-2xl font-extrabold text-[#0A2540] dark:text-white">
-          Scan Your Website’s SEO Performance in 5 Seconds
+          Start a Preliminary Website Review
         </h3>
         <p className="text-sm text-[#334E68] dark:text-slate-300 mt-2">
           Enter your San Jose business website URL below to test site speed, mobile readiness, and local search visibility.
@@ -96,12 +96,12 @@ export const QuickAuditScanner: React.FC<QuickAuditScannerProps> = ({ onOpenFull
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-[#E5C882]/60 dark:border-[#1E3A8A]">
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0A2540] to-[#1E40AF] text-[#D4AF37] font-extrabold text-lg flex items-center justify-center shadow-md border-2 border-[#D4AF37]">
-                {scanResult.score}
+                Review
               </div>
               <div>
                 <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">{scanResult.url}</h4>
                 <p className="text-xs text-[#334E68] dark:text-slate-300 font-medium">
-                  {scanResult.issuesFound} SEO opportunities found that are limiting your rankings
+                  Preliminary checklist for {scanResult.url}; verify findings with a full audit
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export const QuickAuditScanner: React.FC<QuickAuditScannerProps> = ({ onOpenFull
               onClick={() => onOpenFullAudit(scanResult.url)}
               className="w-full sm:w-auto px-4 py-2 bg-[#D4AF37] hover:bg-[#C59B27] text-[#0A2540] text-xs font-extrabold rounded-lg transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              <span>Get Full 15-Page Fix Plan</span>
+              <span>Request Full 15-Point Audit</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#0A2540]" />
             </button>
           </div>
@@ -131,11 +131,11 @@ export const QuickAuditScanner: React.FC<QuickAuditScannerProps> = ({ onOpenFull
             </div>
             <div className="flex items-center justify-between p-2.5 bg-white dark:bg-[#0E2F54] rounded-lg border border-[#E2E8F0] dark:border-[#1E3A8A]">
               <span className="text-[#627D98] dark:text-slate-400">Structured Data Schema:</span>
-              <span className="font-bold text-[#0A2540] dark:text-white">Missing LocalBusiness JSON-LD</span>
+              <span className="font-bold text-[#0A2540] dark:text-white">Requires measurement</span>
             </div>
             <div className="flex items-center justify-between p-2.5 bg-white dark:bg-[#0E2F54] rounded-lg border border-[#E2E8F0] dark:border-[#1E3A8A]">
               <span className="text-[#627D98] dark:text-slate-400">Search Intent Coverage:</span>
-              <span className="font-bold text-[#0A2540] dark:text-white">High Competitor Keyword Gap</span>
+              <span className="font-bold text-[#0A2540] dark:text-white">Requires keyword review</span>
             </div>
           </div>
         </div>

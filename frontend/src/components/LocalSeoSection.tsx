@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LOCAL_SAN_JOSE_AREAS } from '../data/seoData';
-import { MapPin, Star, Phone, Navigation, ArrowRight, Building } from 'lucide-react';
+import { MapPin, Phone, Navigation, ArrowRight, Building } from 'lucide-react';
 
 interface LocalSeoSectionProps {
   onOpenAudit: (servicePrefill?: string) => void;
@@ -21,13 +21,13 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FAF6EB] dark:bg-[#0A2540] text-[#0A2540] dark:text-[#FEF3C7] text-xs font-bold mb-3.5 border border-[#E5C882] dark:border-[#D4AF37]/50 shadow-2xs">
             <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>Local Search Dominance</span>
+            <span>Local Search Visibility</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0A2540] dark:text-white tracking-tight">
             Local SEO & Google Maps Optimization in San Jose
           </h2>
           <p className="text-base sm:text-lg text-[#334E68] dark:text-slate-300 mt-4 leading-relaxed">
-            When potential customers in San Jose search for services "near me", we make sure your business is the first one they see in the Google Maps 3-Pack and local search results.
+            When potential customers in San Jose search for services "near me", we help improve your business visibility in Google Maps and local search results.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
           <div className="lg:col-span-6 space-y-6">
             <div className="bg-white dark:bg-[#0E2F54] p-6 sm:p-7 rounded-2xl border border-[#E2E8F0] dark:border-[#1E3A8A] shadow-sm space-y-5">
               <h3 className="text-xl font-bold text-[#0A2540] dark:text-white">
-                How We Put Your Business at the Top of Google Maps
+                How We Improve Your Google Maps Presence
               </h3>
               
               <div className="space-y-4">
@@ -49,7 +49,7 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
                   <div>
                     <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">Google Business Profile (GBP) Optimization</h4>
                     <p className="text-xs text-[#334E68] dark:text-slate-300 mt-1 leading-relaxed">
-                      Complete profile verification, accurate primary and secondary category selection, geo-tagged photo uploads, product/service menus, and weekly optimized updates.
+                      Complete profile verification, accurate category selection, useful photos, product and service details, and consistent updates.
                     </p>
                   </div>
                 </div>
@@ -59,9 +59,9 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
                     2
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">NAP Citation Synchronization (80+ Directories)</h4>
+                    <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">NAP Citation Consistency</h4>
                     <p className="text-xs text-[#334E68] dark:text-slate-300 mt-1 leading-relaxed">
-                      Ensuring 100% exact Name, Address, and Phone consistency across Apple Maps, Bing, Yelp, YellowPages, Better Business Bureau, and local Silicon Valley business registries.
+                      Keeping your Name, Address, and Phone details consistent across relevant directories and local Silicon Valley business profiles.
                     </p>
                   </div>
                 </div>
@@ -73,7 +73,7 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
                   <div>
                     <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">Hyper-Localized Landing Pages & Schema</h4>
                     <p className="text-xs text-[#334E68] dark:text-slate-300 mt-1 leading-relaxed">
-                      Dedicated pages tailored to San Jose neighborhoods (e.g. Willow Glen, Santana Row, Campbell) embedded with geotagged LocalBusiness Schema structured data.
+                      Useful pages tailored to San Jose neighborhoods (e.g. Willow Glen, Santana Row, Campbell) with accurate local business structured data where appropriate.
                     </p>
                   </div>
                 </div>
@@ -85,7 +85,7 @@ export const LocalSeoSection: React.FC<LocalSeoSectionProps> = ({ onOpenAudit })
                   <div>
                     <h4 className="text-sm font-bold text-[#0A2540] dark:text-white">Reputation Management & Review Generation</h4>
                     <p className="text-xs text-[#334E68] dark:text-slate-300 mt-1 leading-relaxed">
-                      Automated systems and staff guidelines to consistently generate authentic 5-star customer reviews on Google with natural keyword mentions.
+                      A review process that makes it easy for genuine customers to share honest feedback about their experience.
                     </p>
                   </div>
                 </div>

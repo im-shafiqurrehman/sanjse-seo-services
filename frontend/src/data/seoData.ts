@@ -9,7 +9,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     fullDesc: 'Technical SEO forms the foundation of your organic search performance. We audit and optimize site architecture, mobile viewport rendering, HTTPS security, XML sitemaps, canonical tags, schema markup, and Google Core Web Vitals (LCP, INP, CLS) to make sure search engine crawlers can index every valuable page without hindrance.',
     iconName: 'Cpu',
     features: ['Crawl budget & indexation fixes', 'Core Web Vitals acceleration', 'Schema.org structured data markup', 'JavaScript SEO & hydration audit', 'Broken redirect & canonical repair'],
-    deliverables: ['Full 50+ Point Technical Audit', 'Implementation Roadmap for Devs', 'Monthly Core Web Vitals Report'],
+    deliverables: ['Focused 15-Point Technical Audit', 'Implementation Roadmap for Devs', 'Core Web Vitals Reporting'],
     badge: 'Foundation'
   },
   {
@@ -46,11 +46,11 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: 'local-seo',
     number: '05',
     title: 'Local SEO & Google Maps Optimization',
-    shortDesc: 'Dominate Google Maps 3-Pack rankings, location-based queries, and "near me" searches across San Jose and surrounding Bay Area communities.',
-    fullDesc: 'For businesses serving San Jose, Willow Glen, Campbell, Santa Clara, and Silicon Valley, Local SEO is the fastest way to drive inbound calls and foot traffic. We optimize your Google Business Profile (GBP), sync NAP citations across 80+ directories, manage local reviews, and build geotargeted landing pages.',
+    shortDesc: 'Improve Google Maps visibility, location-based queries, and "near me" search presence across San Jose and surrounding Bay Area communities.',
+    fullDesc: 'For businesses serving San Jose, Willow Glen, Campbell, Santa Clara, and Silicon Valley, Local SEO can improve visibility for nearby customers. We optimize your Google Business Profile (GBP), review important business listings, support genuine customer feedback, and build useful local pages.',
     iconName: 'MapPin',
     features: ['Google Business Profile (GBP) 3-Pack optimization', 'Local citation & NAP consistency building', 'Geotargeted service landing pages', 'Review generation & reputation guidance', 'Local link & community sponsorship outreach'],
-    deliverables: ['GBP Audit & Complete Setup', 'Local Citation Sync in 80+ Directories', 'Local Rank Grid & Heatmap Tracking'],
+    deliverables: ['GBP Audit & Complete Setup', 'Relevant Citation Consistency Review', 'Local Visibility Tracking'],
     badge: 'High Inbound ROI'
   },
   {
@@ -133,10 +133,10 @@ export const PRICING_PLANS: PricingPlan[] = [
     badge: 'Small Business & Local Services',
     monthlyPrice: '$1,250',
     period: 'per month / transparent billing',
-    idealFor: 'Ideal for local businesses, clinics, contractors, and retail shops looking to dominate San Jose Google Maps and local search.',
+    idealFor: 'Ideal for local businesses, clinics, contractors, and retail shops looking to improve San Jose Maps and local search visibility.',
     features: [
       'Complete Google Business Profile (GBP) optimization',
-      'Local citation synchronization (80+ directories)',
+      'Relevant local citation consistency',
       'Up to 25 target local & "near me" keywords tracked',
       'On-page optimization for up to 8 core service pages',
       'Technical health monitoring & speed audit',
@@ -193,7 +193,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-1',
     category: 'General SEO',
     question: 'What are SEO services, and how do they help my business?',
-    answer: 'Search Engine Optimization (SEO) is the practice of optimizing your website’s technical architecture, content quality, relevance, and authority so search engines like Google rank your pages higher for queries entered by potential customers. Rather than paying for every single click with ads, SEO builds permanent organic search visibility that brings consistent, qualified traffic to your website 24/7.'
+    answer: 'Search Engine Optimization (SEO) is the practice of improving your website’s technical architecture, content quality, relevance, and authority so search engines can better understand and surface your pages for relevant searches. Unlike paid search, organic clicks do not incur a direct cost per click, although SEO requires ongoing strategy and implementation.'
   },
   {
     id: 'faq-2',
@@ -205,7 +205,7 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-3',
     category: 'Local SEO & Maps',
     question: 'What is Local SEO and how does Google Maps 3-Pack optimization work?',
-    answer: 'Local SEO focuses on optimizing your online footprint to capture searches with geographic intent, such as "dentist in San Jose" or "HVAC repair near me". Google Maps optimization involves verifying and optimizing your Google Business Profile (GBP), maintaining 100% consistent Name, Address, and Phone (NAP) citations across directory ecosystems, collecting authentic customer reviews, and optimizing on-page location signals.'
+    answer: 'Local SEO focuses on improving your online presence for searches with geographic intent, such as "dentist in San Jose" or "HVAC repair near me". Google Maps optimization includes an accurate Google Business Profile, consistent business information, genuine customer feedback, relevant photos and services, and useful local website content.'
   },
   {
     id: 'faq-4',

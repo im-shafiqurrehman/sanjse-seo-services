@@ -19,37 +19,6 @@ interface NationalSeoSectionProps {
 }
 
 export const NationalSeoSection: React.FC<NationalSeoSectionProps> = ({ onOpenAudit }) => {
-  const stats = [
-    {
-      value: "3.5 Billion",
-      label: "Daily Searches on Google",
-      sublabel: "Massive constant search intent happening every single day",
-      icon: Search,
-      badge: "Search Volume"
-    },
-    {
-      value: "~60%",
-      label: "National Traffic from Organic",
-      sublabel: "The dominant driver of long-term sustainable web visits",
-      icon: TrendingUp,
-      badge: "Market Share"
-    },
-    {
-      value: ">60%",
-      label: "Research Before Buying",
-      sublabel: "Buyers thoroughly evaluate online before purchase decisions",
-      icon: ShoppingBag,
-      badge: "Buyer Behavior"
-    },
-    {
-      value: ">90%",
-      label: "Clicks Go to Organic Listings",
-      sublabel: "Searchers trust organic results far more than paid ad banners",
-      icon: MousePointerClick,
-      badge: "Trust Factor"
-    }
-  ];
-
   const artPillars = [
     {
       letter: "A",
@@ -107,47 +76,14 @@ export const NationalSeoSection: React.FC<NationalSeoSectionProps> = ({ onOpenAu
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#FAF6EB] dark:bg-[#0A2540] text-[#0A2540] dark:text-[#FEF3C7] text-xs font-bold mb-3.5 border border-[#E5C882] dark:border-[#D4AF37]/50 shadow-2xs">
             <Award className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>Award-Winning National SEO Strategy</span>
+            <span>National SEO Strategy</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0A2540] dark:text-white tracking-tight leading-tight">
             Harness High-Converting Organic Search Traffic
           </h2>
           <p className="text-base sm:text-lg text-[#334E68] dark:text-slate-300 mt-4 leading-relaxed">
-            By optimizing your E.A.T. (expertise, authoritativeness, and trustworthiness), we’ll help drive new qualified traffic to your website without constantly paying for clicks.
+            By improving useful content, technical foundations, and credible business information, we help your website become easier to understand and find for relevant searches.
           </p>
-        </div>
-
-        {/* 4 Market Reality Stat Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {stats.map((stat, idx) => {
-            const Icon = stat.icon;
-            return (
-              <div
-                key={idx}
-                className="bg-white dark:bg-[#0E2F54] rounded-2xl p-6 border border-[#E2E8F0] dark:border-[#1E3A8A] shadow-xs hover:border-[#D4AF37] dark:hover:border-[#D4AF37] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#1E40AF] dark:text-[#E5C882] bg-[#FAF6EB] dark:bg-[#0A2540] px-2.5 py-1 rounded-full border border-[#E5C882]/60 dark:border-[#D4AF37]/40">
-                      {stat.badge}
-                    </span>
-                    <div className="w-8 h-8 rounded-lg bg-[#FAF6EB] dark:bg-[#0A2540] text-[#1E40AF] dark:text-[#E5C882] flex items-center justify-center border border-[#E5C882] dark:border-[#D4AF37]/30">
-                      <Icon className="w-4 h-4 text-[#D4AF37]" />
-                    </div>
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-extrabold text-[#0A2540] dark:text-white tracking-tight">
-                    {stat.value}
-                  </div>
-                  <h3 className="text-sm font-bold text-[#0A2540] dark:text-[#FEF3C7] mt-1.5">
-                    {stat.label}
-                  </h3>
-                </div>
-                <p className="text-xs text-[#627D98] dark:text-slate-300 mt-3 pt-3 border-t border-[#E2E8F0] dark:border-[#1E3A8A] leading-relaxed">
-                  {stat.sublabel}
-                </p>
-              </div>
-            );
-          })}
         </div>
 
         {/* Strategic Deep-Dive Container */}
@@ -159,16 +95,16 @@ export const NationalSeoSection: React.FC<NationalSeoSectionProps> = ({ onOpenAu
             <div className="lg:col-span-8 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1E40AF]/60 text-[#FEF3C7] text-xs font-bold border border-[#D4AF37]/40">
                 <Sparkles className="w-3.5 h-3.5 text-[#D4AF37]" />
-                <span>Crack the Code of Sustainable Search</span>
+                <span>Build a Sustainable Search Strategy</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug">
                 Turn Search Intent Into Long-Term Brand Equity
               </h3>
               <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-                There are currently <strong>3.5 billion daily searches on Google</strong>, and around <strong>60% of national web traffic</strong> comes from organic search. Additionally, more than <strong>60% of users research product information online</strong> before buying, and over <strong>90% of clicks go to organic (rather than paid) listings</strong>.
+                People use search engines throughout the buying journey. National SEO helps your business become easier to find when those searches match the problems your products or services solve.
               </p>
               <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
-                Our Award-Winning National SEO services will help you <em>‘crack the code’</em> and harness high-converting organic traffic. By optimizing your <strong>E.A.T. (expertise, authoritativeness, and trustworthiness)</strong>, we’ll help drive new traffic to your site without paying for clicks. A correctly implemented National SEO strategy will increase your brand awareness, online lead generation, and, most importantly, your bottom-line revenue.
+                Our national SEO work focuses on technical foundations, useful content, search intent, and credible authority signals. Organic traffic does not have a direct per-click ad charge, but earning and maintaining visibility requires ongoing strategy and implementation.
               </p>
             </div>
 
@@ -183,7 +119,7 @@ export const NationalSeoSection: React.FC<NationalSeoSectionProps> = ({ onOpenAu
                 <ul className="space-y-2.5 text-xs text-slate-200">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                    <span>Zero cost per click once ranked</span>
+                    <span>No direct per-click ad charge for organic clicks</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
@@ -195,7 +131,7 @@ export const NationalSeoSection: React.FC<NationalSeoSectionProps> = ({ onOpenAu
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-[#D4AF37] shrink-0" />
-                    <span>Dominant national brand visibility</span>
+                    <span>Broader visibility for relevant searches</span>
                   </li>
                 </ul>
               </div>

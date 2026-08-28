@@ -11,8 +11,8 @@ export const ProcessGraphic: React.FC<ProcessGraphicProps> = ({ activeStep, onSe
     {
       title: '01 Discover & Audit',
       icon: Search,
-      tag: '50-Point Inspection',
-      items: ['Crawl & indexation analysis', 'Competitor keyword gap mapping', 'Backlink penalty review']
+      tag: '15-Point Inspection',
+      items: ['Crawl & indexation review', 'Competitor keyword gap mapping', 'Backlink quality review']
     },
     {
       title: '02 Roadmap Strategy',
@@ -29,7 +29,7 @@ export const ProcessGraphic: React.FC<ProcessGraphicProps> = ({ activeStep, onSe
     {
       title: '04 Measure & Improve',
       icon: TrendingUp,
-      tag: 'Permanent Growth',
+      tag: 'Sustainable Growth',
       items: ['Real-time Looker dashboard', 'Continuous link acquisition', 'Conversion rate optimization']
     }
   ];
