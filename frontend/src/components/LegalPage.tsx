@@ -1,4 +1,5 @@
 import React from 'react';
+import { contactEmail } from '../lib/contact';
 
 interface LegalPageProps {
   type: 'privacy' | 'terms';
@@ -6,7 +7,7 @@ interface LegalPageProps {
 
 const placeholders = {
   company: '[COMPANY LEGAL NAME REQUIRED]',
-  email: '[LEGAL CONTACT EMAIL REQUIRED]',
+  email: contactEmail,
   address: '[BUSINESS ADDRESS REQUIRED]',
 };
 

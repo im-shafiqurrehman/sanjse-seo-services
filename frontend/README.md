@@ -13,7 +13,7 @@ Next.js frontend for Sanjse SEO Services. The Express backend lives in `../backe
 
 1. Install dependencies in `frontend/` and `backend/`:
    `cd frontend && npm install && cd ../backend && npm install`
-2. Set `CONTACT_EMAIL`, `SMTP_USER`, and `SMTP_PASS` in `backend/.env`. For Gmail, use an app password.
+2. Set `SMTP_USER` and `SMTP_PASS` in `backend/.env`. For Gmail, use an app password. The contact address is hardcoded to `info@sanjoseagencyseo.com`; no email recipient environment variable is needed.
 3. Start the backend in one terminal:
    `cd backend && npm run dev`
 4. Start the frontend in another terminal:
@@ -40,4 +40,4 @@ Backend project:
 
 The backend `vercel.json` exposes `index.ts` as a Node serverless function. The frontend uses `src/lib/api.ts` to send requests to the deployed backend URL.
 
-The audit form sends `POST /api/audit-requests`. The backend emails submissions to `CONTACT_EMAIL` and sets the visitor email as `Reply-To`.
+The audit form sends `POST /api/audit-requests`, and the contact form sends `POST /api/contact-requests`. The backend emails both to the hardcoded address `info@sanjoseagencyseo.com` and sets the visitor email as `Reply-To`.

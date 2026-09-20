@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, Phone, CheckCircle2, Mail, User, Send } from 'lucide-react';
 import { apiUrl } from '../lib/api';
+import { contactEmail } from '../lib/contact';
 
 interface FinalCtaSectionProps {
   onOpenAudit: () => void;
@@ -102,6 +103,7 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenAudit })
           <div className="mb-5">
             <h3 className="text-xl font-extrabold text-[#0A2540] dark:text-white">Contact Us</h3>
             <p className="text-sm text-[#627D98] dark:text-slate-400 mt-1">Tell us what you need and we will get back to you shortly.</p>
+            <p className="text-sm text-[#627D98] dark:text-slate-400 mt-1">Email us at <a href={`mailto:${contactEmail}`} className="break-words text-[#1E40AF] dark:text-[#E5C882] hover:underline">{contactEmail}</a>.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -210,5 +212,4 @@ export const FinalCtaSection: React.FC<FinalCtaSectionProps> = ({ onOpenAudit })
     </section>
   );
 };
-
 

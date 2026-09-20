@@ -1,5 +1,6 @@
 import React from 'react';
-import { MapPin, Clock } from 'lucide-react';
+import { MapPin, Clock, Mail } from 'lucide-react';
+import { contactEmail } from '../lib/contact';
 
 interface FooterProps {
   onOpenAudit: (servicePrefill?: string) => void;
@@ -95,6 +96,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
               Location & Hours
             </h4>
             <div className="space-y-2.5 text-xs sm:text-sm text-[#334E68] dark:text-slate-300">
+              <a href={`mailto:${contactEmail}`} className="flex items-start gap-2 hover:text-[#1E40AF] dark:hover:text-[#E5C882] transition-colors">
+                <Mail className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" aria-hidden="true" />
+                <span className="min-w-0 break-words">{contactEmail}</span>
+              </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                 <span>100 S 1st St, San Jose, CA 95113</span>
@@ -139,5 +144,4 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAudit }) => {
     </footer>
   );
 };
-
 

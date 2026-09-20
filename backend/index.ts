@@ -48,7 +48,8 @@ app.use((request, response, next) => {
   next();
 });
 
-const requiredEnvironment = ['CONTACT_EMAIL', 'SMTP_HOST', 'SMTP_USER', 'SMTP_PASS'];
+const contactEmail = 'info@sanjoseagencyseo.com';
+const requiredEnvironment = ['SMTP_HOST', 'SMTP_USER', 'SMTP_PASS'];
 const hasPlaceholderValue = (value: string | undefined) => !value || /^(you@example\.com|your-app-password|MY_|YOUR_)/i.test(value);
 const missingEnvironment = requiredEnvironment.filter((name) => hasPlaceholderValue(process.env[name]));
 
@@ -241,7 +242,7 @@ app.post('/api/audit-requests', async (request, response) => {
     }
     await mailTransport.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.CONTACT_EMAIL,
+      to: contactEmail,
       replyTo: safeEmail,
       subject,
       text,
@@ -353,7 +354,7 @@ app.post('/api/contact-requests', async (request, response) => {
     }
     await mailTransport.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.CONTACT_EMAIL,
+      to: contactEmail,
       replyTo: safeEmail,
       subject: `New contact message from ${safeName}`,
       text,
